@@ -1,0 +1,44 @@
+<FirstTask>:
+    train_list: train_list
+    ans_field: ans_field
+    my_data: my_data
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Prakapenka - Lab3 (Task 1)"
+            use_overflow: True
+            right_action_items: [["arrow-left-bold", lambda x: root.go_prev_screen()], ["arrow-right-bold", lambda x: root.go_next_screen()]]
+            elevation: 10
+
+        GridLayout:
+            cols: 2
+            size_hint: 1, None
+            height: 200
+            padding: 30
+            spacing: 30
+
+            Button:
+                text: "Получить ответы!!!"
+                background_color: 1, 0, 0, 1
+                on_press: root.get_info()
+
+            TrainWidget:
+                id: train_list
+
+        MDLabel:
+            id: ans_field
+            text: ''
+            size_hint: 1, 1
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            valign: 'center'
+            halign: 'center'
+
+        MDLabel:
+            id: my_data
+            text: 'Data: '
+            size_hint: 1, .2
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            valign: 'center'
+            halign: 'center'

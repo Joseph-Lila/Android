@@ -1,0 +1,60 @@
+<ThirdTask>:
+    my_data: my_data
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Prakapenka - Lab3 (Task 3)"
+            use_overflow: True
+            right_action_items: [["arrow-left-bold", lambda x: root.go_prev_screen()], ["arrow-right-bold", lambda x: root.go_next_screen()]]
+            elevation: 10
+
+        GridLayout:
+            cols: 1
+            padding: 50
+            spacing: 25
+
+            Button:
+                text: "Просмотреть список \nавтобусов"
+                valign: "center"
+                halign: "center"
+                on_press: root.manager.current = 'buses_list'
+
+            Button:
+                text: "Добавить автобус"
+                valign: "center"
+                halign: "center"
+                on_press: root.manager.current = 'add_bus'
+
+            Button:
+                text: "Удалить автобус"
+                valign: "center"
+                halign: "center"
+                on_press: root.manager.current = 'remove_bus'
+
+            Button:
+                text: "a) список автобусов для \nзаданного номера маршрута"
+                valign: "center"
+                halign: "center"
+                on_press: root.manager.current = 'task_3_tip_a'
+
+            Button:
+                text: "b) список автобусов, которые \nэксплуатируются больше 10 лет"
+                valign: "center"
+                halign: "center"
+                on_press: root.manager.current = 'task_3_tip_b'
+
+            Button:
+                text: "c) список автобусов, пробег \nу которых больше 100000 км"
+                valign: "center"
+                halign: "center"
+                on_press: root.manager.current = 'task_3_tip_c'
+
+            MDLabel:
+                id: my_data
+                text: 'Data: '
+                size_hint: 1, .2
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                valign: 'center'
+                halign: 'center'

@@ -1,0 +1,38 @@
+<SecondTask>:
+    my_data: my_data
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Prakapenka - Lab3 (Task 2)"
+            use_overflow: True
+            right_action_items: [["arrow-left-bold", lambda x: root.go_prev_screen()], ["arrow-right-bold", lambda x: root.go_next_screen()]]
+            elevation: 10
+
+        GridLayout:
+            rows: 2
+            cols: 1
+            padding: 50
+            spacing: 25
+
+            MDTextField:
+                id: my_data
+                hint_text: "Enter data to send it to another activity"
+                mode: "fill"
+                text: ''
+                fill_color: 0, 0, 0, .4
+                icon_right: "send-circle"
+                icon_right_color: app.theme_cls.primary_color
+                size_hint: .8, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDRectangleFlatButton:
+                text: "[i]Send data[/i]"
+                markup: True
+                theme_text_color: "Custom"
+                text_color: 0, 0, 1, 1
+                line_color: 0, 0, 1, 1
+                size_hint: .8, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_press: root.send_data(my_data.text)

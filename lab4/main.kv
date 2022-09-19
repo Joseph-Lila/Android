@@ -1,0 +1,175 @@
+<FirstScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Prakapenka - Lab4 (Task 1)"
+            right_action_items: [["arrow-left-bold", lambda x: root.go_prev_screen()], ["arrow-right-bold", lambda x: root.go_next_screen()]]
+            elevation: 10
+
+        GridLayout:
+            rows: 2
+            cols: 1
+            padding: 30, 30, 30, 30
+            spacing: 10
+
+            GridLayout:
+                cols: 4
+                rows: 3
+                spacing: 10
+
+                Widget:
+                Widget:
+                Widget:
+                Button:
+                    text: '/'
+                Button:
+                    text: '1'
+                Button:
+                    text: '2'
+                Button:
+                    text: '3'
+                Button:
+                    text: '*'
+                Button:
+                    text: '4'
+                Button:
+                    text: '5'
+                Button:
+                    text: '6'
+                Button:
+                    text: '-'
+
+            GridLayout:
+                cols: 2
+                rows: 1
+                spacing: 10
+
+                GridLayout:
+                    size_hint_x: .75
+                    cols: 1
+                    rows: 3
+                    spacing: 10
+
+                    GridLayout:
+                        rows: 1
+                        cols: 3
+                        spacing: 10
+
+                        Button:
+                            text: '7'
+                        Button:
+                            text: '8'
+                        Button:
+                            text: '9'
+
+                    GridLayout:
+                        rows: 1
+                        cols: 2
+                        spacing: 10
+
+                        Button:
+                            text: '0'
+                            size_hint_x: 2
+
+                        Button:
+                            text: '00'
+                            size_hint_x: 1
+
+                    Button:
+                        text: '='
+
+                Button:
+                    size_hint_x: .25
+                    text: '+'
+
+
+<SecondScreen>:
+    big_img: big_img
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Prakapenka - Lab4 (Task 2)"
+            right_action_items: [["arrow-left-bold", lambda x: root.go_prev_screen()], ["arrow-right-bold", lambda x: root.go_next_screen()]]
+            elevation: 10
+
+        PageLayout:
+
+            MDGridLayout:
+                cols: 3
+                row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                row_force_default: True
+                adaptive_height: True
+                padding: 30, 30, 30, 30
+                spacing: 40
+
+                Button:
+                    on_press: root.update_big_img(self.children[0].source)
+
+                    FitImage:
+                        source: 'images/photo_2021-08-04_20-08-50.jpg'
+                        size_hint: None, None
+                        center_x: self.parent.x
+                        center_y: self.parent.center_y
+                        size: self.parent.size
+                        pos: self.parent.pos
+
+                Button:
+                    on_press: root.update_big_img(self.children[0].source)
+
+                    FitImage:
+                        source: 'images/photo_2021-08-04_20-11-34.jpg'
+                        size_hint: None, None
+                        center_x: self.parent.x
+                        center_y: self.parent.center_y
+                        size: self.parent.size
+                        pos: self.parent.pos
+
+                Button:
+                    on_press: root.update_big_img(self.children[0].source)
+
+                    FitImage:
+                        source: 'images/_original.jpg'
+                        size_hint: None, None
+                        center_x: self.parent.x
+                        center_y: self.parent.center_y
+                        size: self.parent.size
+                        pos: self.parent.pos
+
+                Button:
+                    on_press: root.update_big_img(self.children[0].source)
+
+                    FitImage:
+                        source: 'images/1624357300_39-phonoteka_org-p-loki-oboi-na-rabochii-stol-krasivo-40.jpg'
+                        size_hint: None, None
+                        center_x: self.parent.x
+                        center_y: self.parent.center_y
+                        size: self.parent.size
+                        pos: self.parent.pos
+
+                Button:
+                    on_press: root.update_big_img(self.children[0].source)
+
+                    FitImage:
+                        source: 'images/photo_2021-08-04_20-09-23.jpg'
+                        size_hint: None, None
+                        center_x: self.parent.x
+                        center_y: self.parent.center_y
+                        size: self.parent.size
+                        pos: self.parent.pos
+
+                Button:
+                    on_press: root.update_big_img(self.children[0].source)
+
+                    FitImage:
+                        source: 'images/photo_2021-08-04_20-09-16.jpg'
+                        size_hint: None, None
+                        center_x: self.parent.x
+                        center_y: self.parent.center_y
+                        size: self.parent.size
+                        pos: self.parent.pos
+
+            FitImage:
+                id: big_img

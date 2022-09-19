@@ -1,0 +1,142 @@
+<MyLabel@MDLabel>:
+    font_size: "23sp"
+    theme_text_color: "Secondary"
+    halign: "center"
+    markup: True
+    valign: "center"
+
+<MyTxtField@MDTextField>:
+    mode: 'rectangle'
+    font_size: "23sp"
+    write_tab: False
+
+<Check@MDCheckbox>:
+    group: 'group'
+    size_hint: None, None
+    size: dp(48), dp(48)
+
+<MainWidget>:
+    amount: amount
+    ans: ans
+    currency: currency
+    koef: koef
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDToolbar:
+            title: "Prakapenka - Lab2"
+            elevation: 10
+
+        ScrollView:
+
+            GridLayout:
+                cols: 1
+                padding: 25, 5, 25, 5
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: "80sp"
+
+                MyLabel:
+                    halign: "center"
+                    valign: "center"
+                    text: "[i]Конвертер валют[/i]"
+                    markup: True
+                    bold: True
+
+                MyLabel:
+                    text: "Введите сумму"
+
+                MyTxtField:
+                    id: amount
+                    size_hint_x: .8
+                    helper_text: "наберите сумму в рублях (BYN)"
+                    helper_text_mode: "on_focus"
+                    input_filter: "float"
+
+                MyLabel:
+                    text: "Результат"
+
+                MyLabel:
+                    id: ans
+                    theme_text_color: "Primary"
+                    size_hint_y: .5
+                    text: "здесь появится результат"
+                    md_bg_color: [0, 1, 0, 1]
+
+                MyLabel:
+                    text: "Выберите валюту"
+
+                GridLayout:
+                    cols: 2
+                    valign: "center"
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: "50sp"
+
+                    BoxLayout:
+                        orientation: 'vertical'
+
+                        Spinner:
+                            id: currency
+                            background_color: [0, 0, 1, .7]
+                            font_size: "23sp"
+                            text: 'RUB'
+                            values: 'RUB', 'USD', 'EUR'
+                            size_hint: None, 1
+                            size: (self.parent.width / 3 * 2, self.parent.height / 2 + 10)
+                            pos_hint: {'center_x': 0.5}
+                            on_text: root.change_currency()
+
+                    BoxLayout:
+                        orientation: 'vertical'
+
+                        MDRaisedButton:
+                            size_hint: None, 1
+                            size: (self.parent.width / 3 * 2, self.parent.height / 2 + 10)
+                            pos_hint: {'center_x': 0.5}
+                            text: "Рассчитать"
+                            font_size: "23sp"
+                            theme_text_color: "Custom"
+                            text_color: 0, 0, 0, 1
+                            on_press: root.calculate()
+
+                GridLayout:
+                    cols: 2
+                    rows: None
+
+                    Widget:
+
+                    GridLayout:
+                        cols: None
+                        rows: 2
+
+                        GridLayout:
+                            rows: None
+                            cols: 2
+
+                            Check:
+                                active: True
+                                pos_hint: {'center_x': .4, 'center_y': .5}
+                                on_press: root.change_mode('покупка')
+
+                            MyLabel:
+                                text: "Покупка"
+
+                        GridLayout:
+                            rows: None
+                            cols: 2
+
+                            Check:
+                                pos_hint: {'center_x': .6, 'center_y': .5}
+                                on_press: root.change_mode('продажа')
+
+                            MyLabel:
+                                text: "Продажа"
+
+                MyLabel:
+                    id: koef
+                    theme_text_color: "Primary"
+                    text: ""
+                    md_bg_color: [0, 1, 0, 1]

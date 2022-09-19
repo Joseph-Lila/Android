@@ -1,0 +1,112 @@
+#:import Snackbar kivymd.uix.snackbar.Snackbar
+
+<Content>:
+    screen_master: screen_master
+    orientation: "vertical"
+
+    ScreenMaster:
+        id: screen_master
+
+        FirstScreen:
+            name: "first"
+
+            MDBoxLayout:
+                orientation: 'vertical'
+
+                MDToolbar:
+                    title: "Prakapenka - Lab1 (1)"
+                    use_overflow: True
+                    right_action_items: [["numeric-2", lambda x: root.go_next_screen()]]
+                    elevation: 10
+
+                MDGridLayout:
+                    cols: None
+                    rows: 2
+                    padding: 100
+                    size_hint_x: 1
+
+                    MDLabel:
+                        id: label
+                        text: ""
+                        font_style: "H3"
+                        size_hint_x: 1
+                        halign: "center"
+                        theme_text_color: "Secondary"
+
+                    MDTextButton:
+                        font_style: "H2"
+                        text: "Click Me!"
+                        halign: "center"
+                        size_hint_x: .5
+                        theme_text_color: "Primary"
+                        color: (1, 0, .8, 1)
+                        on_press: root.change_text()
+
+        SecondScreen:
+            name: "second"
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDToolbar:
+                    title: "Prakapenka - Lab1 (2)"
+                    use_overflow: True
+                    right_action_items: [["numeric-1", lambda x: root.go_prev_screen()]]
+                    elevation: 10
+
+                GridLayout:
+                    cols: 1
+                    padding: 20
+
+                    GridLayout:
+                        cols: 2
+                        spacing: 5
+                        padding: 5
+
+                        GridLayout:
+                            cols: 1
+                            spacing: 10
+
+                            Button:
+                                text: "Вася"
+                                on_press: Snackbar(text=self.text).open()
+
+                            Button:
+                                text: "Петя"
+                                on_press: Snackbar(text=self.text).open()
+
+                        GridLayout:
+                            cols: 2
+
+                            Button:
+                                text: "Миша"
+                                on_press: Snackbar(text=self.text).open()
+
+                            Button:
+                                text: "Маша"
+                                on_press: Snackbar(text=self.text).open()
+
+                    GridLayout:
+                        cols: 2
+
+                        GridLayout:
+                            cols: 2
+
+                            Button:
+                                text: "Котя"
+                                on_press: Snackbar(text=self.text).open()
+
+                            Button:
+                                text: "Мотя"
+                                on_press: Snackbar(text=self.text).open()
+
+                        GridLayout:
+                            cols: 1
+
+                            Button:
+                                text: "Таня"
+                                on_press: Snackbar(text=self.text).open()
+
+                            Button:
+                                text: "Маня"
+                                on_press: Snackbar(text=self.text).open()
