@@ -1,0 +1,19 @@
+<RemoveBus>:
+    container: container
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Prakapenka - Lab4 (Remove Bus)"
+            use_overflow: True
+            right_action_items: [["arrow-left-bold", lambda x: root.go_back()]]
+            elevation: 10
+
+        MDBoxLayout:
+            orientation: 'vertical'
+
+            ScrollView:
+
+                MDList:
+                    id: container

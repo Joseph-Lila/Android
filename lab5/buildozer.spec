@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Prakapenka Lab5
+title = Prakapenka Lab3
 
 # (str) Package name
-package.name = lab5
+package.name = lab3
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -16,7 +16,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*,images/*
+source.include_patterns = Controllers/*,kv_files/*,Models/*.Tasks/*,Views/*
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec

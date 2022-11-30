@@ -1,0 +1,36 @@
+{
+    "elements": [
+        {
+            "fio": "1",
+            "bus_number": "1",
+            "route_number": 1.0,
+            "brand": "1",
+            "creation_year": 1,
+            "vehicle": 1.0
+        },
+        {
+            "fio": "2",
+            "bus_number": "2",
+            "route_number": 2.0,
+            "brand": "2",
+            "creation_year": 2,
+            "vehicle": 2.0
+        },
+        {
+            "fio": "3",
+            "bus_number": "3",
+            "route_number": 3.0,
+            "brand": "3",
+            "creation_year": 3,
+            "vehicle": 3.0
+        },
+        {
+            "fio": "5",
+            "bus_number": "5",
+            "route_number": 5.0,
+            "brand": "5",
+            "creation_year": 5,
+            "vehicle": 5.0
+        }
+    ]
+}

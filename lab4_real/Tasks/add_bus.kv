@@ -1,0 +1,110 @@
+<AddBus>:
+    fio: fio
+    bus_number: bus_number
+    route_number: route_number
+    brand: brand
+    creation_year: creation_year
+    vehicle: vehicle
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDTopAppBar:
+            title: "Prakapenka - Lab4 (Add Bus)"
+            use_overflow: True
+            right_action_items: [["arrow-left-bold", lambda x: root.go_back()]]
+            elevation: 10
+
+        ScrollView:
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 50
+                spacing: 25
+
+                MDTextField:
+                    id: fio
+                    hint_text: "Enter FIO"
+                    mode: "fill"
+                    text: ''
+                    fill_color: 0, 0, 0, .4
+                    icon_right: "account-check"
+                    icon_right_color: app.theme_cls.primary_color
+                    size_hint: .8, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    write_tab: False
+
+                MDTextField:
+                    id: bus_number
+                    hint_text: "Enter bus_number"
+                    mode: "fill"
+                    text: ''
+                    fill_color: 0, 0, 0, .4
+                    icon_right: "counter"
+                    icon_right_color: app.theme_cls.primary_color
+                    size_hint: .8, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    write_tab: False
+
+                MDTextField:
+                    id: route_number
+                    hint_text: "Enter route_number"
+                    mode: "fill"
+                    text: ''
+                    fill_color: 0, 0, 0, .4
+                    icon_right: "counter"
+                    icon_right_color: app.theme_cls.primary_color
+                    size_hint: .8, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    write_tab: False
+                    input_filter: "float"
+
+                MDTextField:
+                    id: brand
+                    hint_text: "Enter brand"
+                    mode: "fill"
+                    text: ''
+                    fill_color: 0, 0, 0, .4
+                    icon_right: "label-variant"
+                    icon_right_color: app.theme_cls.primary_color
+                    size_hint: .8, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    write_tab: False
+
+                MDTextField:
+                    id: creation_year
+                    hint_text: "Enter creation_year"
+                    mode: "fill"
+                    text: ''
+                    fill_color: 0, 0, 0, .4
+                    icon_right: "bullseye-arrow"
+                    icon_right_color: app.theme_cls.primary_color
+                    size_hint: .8, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    write_tab: False
+                    input_filter: "int"
+
+                MDTextField:
+                    id: vehicle
+                    hint_text: "Enter vehicle"
+                    mode: "fill"
+                    text: ''
+                    fill_color: 0, 0, 0, .4
+                    icon_right: "car-estate"
+                    icon_right_color: app.theme_cls.primary_color
+                    size_hint: .8, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    write_tab: False
+                    input_filter: "float"
+
+                MDRectangleFlatButton:
+                    text: "[i]Add Bus[/i]"
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 1, 1
+                    line_color: 0, 0, 1, 1
+                    size_hint: .8, None
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    on_press: root.add_bus()
