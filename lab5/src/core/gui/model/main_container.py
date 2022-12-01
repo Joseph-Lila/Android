@@ -13,10 +13,4 @@ from core.gui.model.base_observable_model import BaseObservableModel
 
 
 class MainContainerModel(BaseObservableModel):
-    """
-    The MainContainerModel class is a unit of work model implementation.
-    """
-
-    def __init__(self, uow: abstract_unit_of_work.AbstractUnitOfWork) -> None:
-        super().__init__()
-        self.uow = uow
+    """ The MainContainerModel class is a unit of work model implementation. """

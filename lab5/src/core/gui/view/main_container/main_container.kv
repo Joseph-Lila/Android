@@ -1,12 +1,12 @@
 <MainContainerView>:
-    orientation: "vertical"
+    nav_rail: nav_rail
     md_bg_color: 93/255, 93/255, 67/255, 255/255
     spacing: "12dp"
     padding: "12dp"
-    radius: [10, ]
     pos_hint: {"center_x": .5, "center_y": .5}
 
     MDNavigationRail:
+        id: nav_rail
         anchor: "top"
         material_style: "M3"
         type: "unselected"
@@ -30,5 +30,3 @@
 
         MDNavigationRailItem:
             icon: "train"
-
-        <ScreenMaster>:

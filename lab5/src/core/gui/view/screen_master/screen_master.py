@@ -1,14 +1,15 @@
-""" Module core.gui.view.main_container """
+""" Module core.gui.view.screen_master """
+
 
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
-from kivymd.uix.card import MDCard
+from kivy.uix.screenmanager import ScreenManager
 from core.service_layer.observer import Observer
 from pathlib import Path
 
 
-class MainContainerView(MDCard, Observer):
-    """ A class that implements the visual presentation `MainContainerModel` """
+class ScreenMasterView(ScreenManager, Observer):
+    """ A class that implements the visual presentation `ScreenMaster` """
 
     presenter = ObjectProperty()
     model = ObjectProperty()
