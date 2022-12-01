@@ -1,10 +1,12 @@
 """ Module core.gui.view.main_container """
 
+from pathlib import Path
+
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivymd.uix.card import MDCard
+
 from core.service_layer.observer import Observer
-from pathlib import Path
 
 
 class MainContainerView(MDCard, Observer):

@@ -1,11 +1,13 @@
 """ Module core.gui.view.screen_master """
 
 
+from pathlib import Path
+
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import ScreenManager
+
 from core.service_layer.observer import Observer
-from pathlib import Path
 
 
 class ScreenMasterView(ScreenManager, Observer):

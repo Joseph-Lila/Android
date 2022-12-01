@@ -1,9 +1,10 @@
 """ Module core.service_layer.unit_of_work.abstract_unit_of_work """
 import abc
+from pathlib import Path
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from pathlib import Path
+
 from core import config
 
 

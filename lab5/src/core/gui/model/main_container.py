@@ -8,7 +8,6 @@
     inheriting which, the `model_is_changed` method must be overridden.
 """
 
-from core.service_layer.unit_of_work import abstract_unit_of_work
 from core.gui.model.base_observable_model import BaseObservableModel
 
 

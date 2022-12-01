@@ -3,7 +3,6 @@ from core.gui.model.screen_master import ScreenMasterModel
 from core.gui.presenter.main_container import MainContainerPresenter
 from core.gui.presenter.screen_master import ScreenMasterPresenter
 
-
 SCREENS = {
     # name screen
     "screen master": {
